@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f59fcf63-8c76-471a-b81d-4908a393f098" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Task4/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task4/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task4/src/main/java/org/example/SudokuRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task4/src/test/java/TestSudokuBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task4/src/test/java/TestSudokuBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Task3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle2023.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BacktrackingSudokuSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuBoard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuColumn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuRow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SudokuSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestSudokuBoard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Task4-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-cachefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-checker.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/checkstyle-result.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/BacktrackingSudokuSolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuColumn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuField.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuRow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/SudokuSolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cpd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pmd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pmd/rulesets/001-maven-pmd-plugin-default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/checkstyle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/cpd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/apache-maven-fluido-2.0.0-M8.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/dependency-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/accessories-text-editor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/add.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/apache-maven-project-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/application-certificate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/contact-new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/document-properties.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/drive-harddisk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/fix.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_error_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_help_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_info_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_success_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/icon_warning_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/image-x-generic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/internet-web-browser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/logos/maven-feather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/network-server.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/package-x-generic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/profiles/pre-release.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/profiles/retired.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/profiles/sandbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/remove.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/rss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/update.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/images/window-new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/img/glyphicons-halflings-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/img/glyphicons-halflings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/branchfc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/branchnc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/branchpc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/bundle.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/class.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/down.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/greenbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/group.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/method.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/package.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/redbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/session.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/source.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/up.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/BacktrackingSudokuSolver.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/BacktrackingSudokuSolver.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuBoard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuBoard.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuBox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuBox.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuColumn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuColumn.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuField.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuField.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuRow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuRow.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuSection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/SudokuSection.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/org.example/index.source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/js/apache-maven-fluido-2.0.0-M8.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/plugin-management.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/plugins.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/pmd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/project-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/project-reports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/team.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/TestSudokuBoard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref-test/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/BacktrackingSudokuSolver.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuBoard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuBox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuColumn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuField.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuRow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuSection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/SudokuSolver.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/org/example/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/xref/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSudokuBoard.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSudokuBoard.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSudokuBoard.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2eHcIIRNvbClUleKNOfLKZtSyW6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.SudokuBoxTest.executor": "Run",
+    "JUnit.SudokuBoxTest.testGetBox.executor": "Run",
+    "JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidBox.executor": "Run",
+    "JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidColumnOnEmptyBoard.executor": "Run",
+    "JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidRowOnEmptyBoard.executor": "Run",
+    "JUnit.TestSudokuBoard.executor": "Run",
+    "JUnit.TestSudokuBoard.solveGame_ShouldGenerateValidSudoku.executor": "Run",
+    "JUnit.TestSudokuBoard.testRowValid.executor": "Run",
+    "Maven.Task4 [clean].executor": "Run",
+    "Maven.Task4 [compile].executor": "Run",
+    "Maven.Task4 [install].executor": "Run",
+    "Maven.Task4 [package].executor": "Run",
+    "Maven.Task4 [site].executor": "Run",
+    "Maven.Task4 [test].executor": "Run",
+    "Maven.Task4 [validate].executor": "Run",
+    "Maven.Task4 [verify].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/shino/Desktop/CP/Task4",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidColumnOnEmptyBoard">
+    <configuration name="TestSudokuBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSudokuBoard" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSudokuBoard" />
+      <option name="METHOD_NAME" value="checkBoard_ShouldReturnFalseForInvalidBox" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidColumnOnEmptyBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSudokuBoard" />
+      <option name="METHOD_NAME" value="checkBoard_ShouldReturnFalseForInvalidColumnOnEmptyBoard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidRowOnEmptyBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSudokuBoard" />
+      <option name="METHOD_NAME" value="checkBoard_ShouldReturnFalseForInvalidRowOnEmptyBoard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSudokuBoard.solveGame_ShouldGenerateValidSudoku" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Task3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSudokuBoard" />
+      <option name="METHOD_NAME" value="solveGame_ShouldGenerateValidSudoku" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidColumnOnEmptyBoard" />
+        <item itemvalue="JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidRowOnEmptyBoard" />
+        <item itemvalue="JUnit.TestSudokuBoard.checkBoard_ShouldReturnFalseForInvalidBox" />
+        <item itemvalue="JUnit.TestSudokuBoard" />
+        <item itemvalue="JUnit.TestSudokuBoard.solveGame_ShouldGenerateValidSudoku" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f59fcf63-8c76-471a-b81d-4908a393f098" name="Changes" comment="" />
+      <created>1711564863244</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711564863244</updated>
+      <workItem from="1711564864247" duration="12342000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

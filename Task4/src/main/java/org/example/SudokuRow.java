@@ -1,10 +1,9 @@
 package org.example;
 
-public class SudokuRow extends SudokuGroup {
-    private SudokuField[] fields;
+public class SudokuRow extends SudokuSection {
 
     public SudokuRow() {
-        this.fields = new SudokuField[9];
+        fields = new SudokuField[9];
         for (int i = 0; i < fields.length; i++) {
             fields[i] = new SudokuField();
         }
