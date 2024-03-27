@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class SudokuBox extends SudokuGroup {
     private SudokuField[][] fields;
 
@@ -15,9 +12,6 @@ public class SudokuBox extends SudokuGroup {
         }
     }
 
-    public boolean verify() {
-        return super.verify();
-    }
     public void setField(int row, int col, SudokuField field) {
         fields[row][col] = field;
     }

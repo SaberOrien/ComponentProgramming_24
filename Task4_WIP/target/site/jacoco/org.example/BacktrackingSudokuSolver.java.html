@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang=""><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BacktrackingSudokuSolver.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task4</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">BacktrackingSudokuSolver.java</span></div><h1>BacktrackingSudokuSolver.java</h1><pre class="source lang-java linenums">package org.example;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+<span class="fc" id="L8">public class BacktrackingSudokuSolver implements SudokuSolver {</span>
+    private static final int SIZE = 9;
+    private static final int EMPTY = 0;
+
+    private boolean isSafe(SudokuBoard sudokuBoard, int row, int col, int num) {
+        // Check row and column
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for (int d = 0; d &lt; SIZE; d++) {</span>
+<span class="fc bfc" id="L15" title="All 4 branches covered.">            if (sudokuBoard.get(row, d) == num || sudokuBoard.get(d, col) == num) {</span>
+<span class="fc" id="L16">                return false;</span>
+            }
+        }
+        // Check 3x3 box
+<span class="fc" id="L20">        int boxRowStart = row - row % 3;</span>
+<span class="fc" id="L21">        int boxColStart = col - col % 3;</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (int r = boxRowStart; r &lt; boxRowStart + 3; r++) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            for (int c = boxColStart; c &lt; boxColStart + 3; c++) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                if (sudokuBoard.get(r, c) == num) {</span>
+<span class="fc" id="L25">                    return false;</span>
+                }
+            }
+        }
+<span class="fc" id="L29">        return true;</span>
+    }
+
+    public boolean solve(SudokuBoard sudokuBoard) {
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (int row = 0; row &lt; SIZE; row++) {</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (int col = 0; col &lt; SIZE; col++) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                if (sudokuBoard.get(row, col) == EMPTY) {</span>
+<span class="fc" id="L36">                    List&lt;Integer&gt; numbers = IntStream.rangeClosed(1, SIZE).boxed().collect(Collectors.toList());</span>
+<span class="fc" id="L37">                    Collections.shuffle(numbers);</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                    for (int number : numbers) {</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                        if (isSafe(sudokuBoard, row, col, number)) {</span>
+<span class="fc" id="L40">                            sudokuBoard.set(row, col, number);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                            if (solve(sudokuBoard)) {</span>
+<span class="fc" id="L42">                                return true;</span>
+                            } else {
+<span class="fc" id="L44">                                sudokuBoard.set(row, col, EMPTY);</span>
+                            }
+                        }
+<span class="fc" id="L47">                    }</span>
+<span class="fc" id="L48">                    return false; // backtrack</span>
+                }
+            }
+        }
+<span class="fc" id="L52">        return true; // success</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

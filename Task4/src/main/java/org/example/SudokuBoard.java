@@ -3,6 +3,7 @@ package org.example;
 public class SudokuBoard {
     private SudokuField[][] board;
     private SudokuSolver sudokuSolver;
+
     public SudokuBoard(SudokuSolver solver) {
         board = new SudokuField[9][9];
         for (int i = 0; i < 9; i++) {
@@ -59,8 +60,8 @@ public class SudokuBoard {
 
     public SudokuBox getSudokuBox(int x, int y) {
         SudokuBox box = new SudokuBox();
-        int startX = (x / 3) * 3;
-        int startY = (y / 3) * 3;
+        int startX = x / 3 * 3;
+        int startY = y / 3 * 3;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 box.setField(i, j, board[startY + i][startX + j]);
