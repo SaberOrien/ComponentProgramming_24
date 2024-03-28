@@ -14,6 +14,11 @@
             <name>Izabela Andrzejczyk</name>
             <email>242122@edu.p.lodz.pl</email>
         </developer>
+        <developer>
+            <id>242125</id>
+            <name>Aleksander Brzostowski</name>
+            <email>242125@edu.p.lodz.pl</email>
+        </developer>
     </developers>
 
     <description>Project of laboratory group MKW_THU_1030_04</description>
