@@ -6,6 +6,13 @@ import java.util.Set;
 public abstract class SudokuSection {
     protected SudokuField[] fields;
 
+    public SudokuSection(SudokuField[] fields) {
+        this.fields = new SudokuField[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            this.fields[i] = new SudokuField(fields[i]);
+        }
+    }
+
     public boolean verify() {
         Set<Integer> presentValues = new HashSet<>();
         for (SudokuField field : fields) {
@@ -18,6 +25,11 @@ public abstract class SudokuSection {
     }
 
     public SudokuField[] getFields() {
-        return fields;
+        SudokuField[] fieldsCopy = new SudokuField[fields.length];
+        for (int i = 0; i < fields.length; i++) {
+            fieldsCopy[i] = new SudokuField(fields[i]);
+        }
+        return fieldsCopy;
     }
+
 }

@@ -7,6 +7,12 @@ public class SudokuField {
     private int value;
     private PropertyChangeSupport changes = new PropertyChangeSupport(this);
 
+    public SudokuField() {
+    }
+
+    public SudokuField(SudokuField other) {
+        this.value = other.value;
+    }
 
     public int getFieldValue() {
         return value;

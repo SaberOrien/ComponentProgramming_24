@@ -49,30 +49,30 @@ public class SudokuBoard implements PropertyChangeListener {
     }
 
     public SudokuRow getRow(int y) {
-        SudokuRow row = new SudokuRow();
-        System.arraycopy(board, y * 9, row.getFields(), 0, 9);
-        return row;
+        SudokuField[] rowFields = new SudokuField[9];
+        System.arraycopy(board, y * 9, rowFields, 0, 9);
+        return new SudokuRow(rowFields);
     }
 
     public SudokuColumn getColumn(int x) {
-        SudokuColumn column = new SudokuColumn();
+        SudokuField[] columnFields = new SudokuField[9];
         for (int i = 0; i < 9; i++) {
-            column.getFields()[i] = board[x + i * 9];
+            columnFields[i] = new SudokuField(board[x + i * 9]);
         }
-        return column;
+        return new SudokuColumn(columnFields);
     }
 
-
     public SudokuBox getBox(int x, int y) {
-        SudokuBox box = new SudokuBox();
+        SudokuField[] boxFields = new SudokuField[9];
         int startX = x / 3 * 3;
         int startY = y / 3 * 3;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                box.getFields()[i * 3 + j] = board[(startY + i) * 9 + startX + j];
+                // Use the copy constructor to ensure encapsulation
+                boxFields[i * 3 + j] = new SudokuField(board[(startY + i) * 9 + startX + j]);
             }
         }
-        return box;
+        return new SudokuBox(boxFields);
     }
 
     public boolean solveGame() {
