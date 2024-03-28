@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -78,40 +77,40 @@ class TestSudokuBoard {
     void getRow_ShouldReflectBoardState() {
         sudokuBoard.set(0, 0, 1);
         sudokuBoard.set(1, 0, 2);
-        // ... set other fields as needed for the test ...
+
         SudokuRow row = sudokuBoard.getRow(0);
+
         assertEquals(1, row.getFields()[0].getFieldValue());
         assertEquals(2, row.getFields()[1].getFieldValue());
-        // ... assert other fields as needed ...
     }
 
     @Test
     void getColumn_ShouldReflectBoardState() {
         sudokuBoard.set(0, 0, 1);
         sudokuBoard.set(0, 1, 2);
-        // ... set other fields as needed for the test ...
+
         SudokuColumn column = sudokuBoard.getColumn(0);
+
         assertEquals(1, column.getFields()[0].getFieldValue());
         assertEquals(2, column.getFields()[1].getFieldValue());
-        // ... assert other fields as needed ...
     }
 
     @Test
     void getBox_ShouldReflectBoardState() {
         sudokuBoard.set(0, 0, 1);
         sudokuBoard.set(1, 1, 2);
-        // ... set other fields as needed for the test ...
+
         SudokuBox box = sudokuBoard.getBox(0, 0);
+
         assertEquals(1, box.getFields()[0].getFieldValue());
         assertEquals(2, box.getFields()[4].getFieldValue());
-        // ... assert other fields as needed ...
     }
 
     @Test
     void setField_InvalidPosition_ShouldThrowException() {
         SudokuRow row = new SudokuRow();
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            row.setField(9, new SudokuField()); // 9 is outside the valid index range for a Sudoku row.
+            row.setField(9, new SudokuField());
         });
 
         String expectedMessage = "Position out of bounds";
@@ -119,7 +118,7 @@ class TestSudokuBoard {
         assertTrue(actualMessage.contains(expectedMessage));
 
         exception = assertThrows(IllegalArgumentException.class, () -> {
-            row.setField(-1, new SudokuField()); // -1 is outside the valid index range for a Sudoku row.
+            row.setField(-1, new SudokuField());
         });
 
         actualMessage = exception.getMessage();
@@ -138,7 +137,6 @@ class TestSudokuBoard {
         SudokuField field = new SudokuField();
         final Boolean[] wasNotified = {false};
 
-        // Mock listener that updates wasNotified when property change occurs
         PropertyChangeListener mockListener = new PropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent evt) {
@@ -146,14 +144,11 @@ class TestSudokuBoard {
             }
         };
 
-        // Add then immediately remove the mock listener
         field.addPropertyChangeListener(mockListener);
         field.removePropertyChangeListener(mockListener);
 
-        // Change the field value
         field.setFieldValue(5);
 
-        // Verify the listener was not notified
         assertFalse(wasNotified[0], "The removed listener should not receive property change notifications.");
     }
 

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang=""><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SudokuBoard.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Task4</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">SudokuBoard.java</span></div><h1>SudokuBoard.java</h1><pre class="source lang-java linenums">package org.example;
+
+public class SudokuBoard {
+    private SudokuField[] board;
+<span class="fc" id="L5">    private SudokuRow[] rows = new SudokuRow[9];</span>
+<span class="fc" id="L6">    private SudokuColumn[] columns = new SudokuColumn[9];</span>
+<span class="fc" id="L7">    private SudokuBox[][] boxes = new SudokuBox[3][3];</span>
+    private SudokuSolver sudokuSolver;
+
+<span class="fc" id="L10">    public SudokuBoard(SudokuSolver solver) {</span>
+<span class="fc" id="L11">        board = new SudokuField[81];</span>
+<span class="fc" id="L12">        this.sudokuSolver = solver;</span>
+<span class="fc" id="L13">        initializeSections();</span>
+<span class="fc" id="L14">        initializeBoard();</span>
+<span class="fc" id="L15">    }</span>
+
+    private void initializeSections() {
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        for (int i = 0; i &lt; 9; i++) {</span>
+<span class="fc" id="L19">            rows[i] = new SudokuRow();</span>
+<span class="fc" id="L20">            columns[i] = new SudokuColumn();</span>
+<span class="fc" id="L21">            boxes[i / 3][i % 3] = new SudokuBox();</span>
+        }
+<span class="fc" id="L23">    }</span>
+
+    private void initializeBoard() {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (int i = 0; i &lt; 81; i++) {</span>
+<span class="fc" id="L27">            SudokuField field = new SudokuField();</span>
+<span class="fc" id="L28">            board[i] = field;</span>
+
+<span class="fc" id="L30">            int row = i / 9;</span>
+<span class="fc" id="L31">            int col = i % 9;</span>
+<span class="fc" id="L32">            int boxRow = row / 3;</span>
+<span class="fc" id="L33">            int boxCol = col / 3;</span>
+
+<span class="fc" id="L35">            rows[row].setField(col, field);</span>
+<span class="fc" id="L36">            columns[col].setField(row, field);</span>
+<span class="fc" id="L37">            boxes[boxRow][boxCol].setField(row % 3 * 3 + col % 3, field);</span>
+        }
+<span class="fc" id="L39">    }</span>
+
+    public int get(int x, int y) {
+<span class="fc" id="L42">        return board[y * 9 + x].getFieldValue();</span>
+    }
+
+    public void set(int x, int y, int value) {
+<span class="fc" id="L46">        board[y * 9 + x].setFieldValue(value);</span>
+<span class="fc" id="L47">    }</span>
+
+    public boolean checkBoard() {
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        for (int i = 0; i &lt; 3; i++) {</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            for (int j = 0; j &lt; 3; j++) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">                if (!boxes[i][j].verify()) {</span>
+<span class="fc" id="L53">                    return false;</span>
+                }
+            }
+        }
+
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (SudokuRow row : rows) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if (!row.verify()) {</span>
+<span class="fc" id="L60">                return false;</span>
+            }
+        }
+
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        for (SudokuColumn column : columns) {</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">            if (!column.verify()) {</span>
+<span class="fc" id="L66">                return false;</span>
+            }
+        }
+
+<span class="fc" id="L70">        return true;</span>
+    }
+
+
+    public SudokuRow getRow(int y) {
+<span class="fc" id="L75">        return rows[y];</span>
+    }
+
+    public SudokuColumn getColumn(int x) {
+<span class="fc" id="L79">        return columns[x];</span>
+    }
+
+    public SudokuBox getBox(int x, int y) {
+<span class="fc" id="L83">        return boxes[y / 3][x / 3];</span>
+    }
+
+    public boolean solveGame() {
+<span class="fc" id="L87">        return sudokuSolver.solve(this);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
