@@ -2,14 +2,40 @@ package org.example;
 
 public class SudokuBoard {
     private SudokuField[] board;
+    private SudokuRow[] rows = new SudokuRow[9];
+    private SudokuColumn[] columns = new SudokuColumn[9];
+    private SudokuBox[][] boxes = new SudokuBox[3][3];
     private SudokuSolver sudokuSolver;
 
     public SudokuBoard(SudokuSolver solver) {
         board = new SudokuField[81];
-        for (int i = 0; i < board.length; i++) {
-            board[i] = new SudokuField();
-        }
         this.sudokuSolver = solver;
+        initializeSections();
+        initializeBoard();
+    }
+
+    private void initializeSections() {
+        for (int i = 0; i < 9; i++) {
+            rows[i] = new SudokuRow();
+            columns[i] = new SudokuColumn();
+            boxes[i / 3][i % 3] = new SudokuBox();
+        }
+    }
+
+    private void initializeBoard() {
+        for (int i = 0; i < 81; i++) {
+            SudokuField field = new SudokuField();
+            board[i] = field;
+
+            int row = i / 9;
+            int col = i % 9;
+            int boxRow = row / 3;
+            int boxCol = col / 3;
+
+            rows[row].setField(col, field);
+            columns[col].setField(row, field);
+            boxes[boxRow][boxCol].setField(row % 3 * 3 + col % 3, field);
+        }
     }
 
     public int get(int x, int y) {
@@ -21,16 +47,22 @@ public class SudokuBoard {
     }
 
     public boolean checkBoard() {
-        for (int row = 0; row < 9; row += 3) {
-            for (int col = 0; col < 9; col += 3) {
-                if (!getBox(row, col).verify()) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (!boxes[i][j].verify()) {
                     return false;
                 }
             }
         }
 
-        for (int i = 0; i < 9; i++) {
-            if (!getRow(i).verify() || !getColumn(i).verify()) {
+        for (SudokuRow row : rows) {
+            if (!row.verify()) {
+                return false;
+            }
+        }
+
+        for (SudokuColumn column : columns) {
+            if (!column.verify()) {
                 return false;
             }
         }
@@ -38,31 +70,17 @@ public class SudokuBoard {
         return true;
     }
 
+
     public SudokuRow getRow(int y) {
-        SudokuRow row = new SudokuRow();
-        System.arraycopy(board, y * 9, row.getFields(), 0, 9);
-        return row;
+        return rows[y];
     }
 
     public SudokuColumn getColumn(int x) {
-        SudokuColumn column = new SudokuColumn();
-        for (int i = 0; i < 9; i++) {
-            column.getFields()[i] = board[x + i * 9];
-        }
-        return column;
+        return columns[x];
     }
 
-
     public SudokuBox getBox(int x, int y) {
-        SudokuBox box = new SudokuBox();
-        int startX = x / 3 * 3;
-        int startY = y / 3 * 3;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                box.getFields()[i * 3 + j] = board[(startY + i) * 9 + startX + j];
-            }
-        }
-        return box;
+        return boxes[y / 3][x / 3];
     }
 
     public boolean solveGame() {

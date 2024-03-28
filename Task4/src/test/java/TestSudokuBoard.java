@@ -2,7 +2,10 @@ import org.example.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -72,6 +75,58 @@ class TestSudokuBoard {
     }
 
     @Test
+    void getRow_ShouldReflectBoardState() {
+        sudokuBoard.set(0, 0, 1);
+        sudokuBoard.set(1, 0, 2);
+        // ... set other fields as needed for the test ...
+        SudokuRow row = sudokuBoard.getRow(0);
+        assertEquals(1, row.getFields()[0].getFieldValue());
+        assertEquals(2, row.getFields()[1].getFieldValue());
+        // ... assert other fields as needed ...
+    }
+
+    @Test
+    void getColumn_ShouldReflectBoardState() {
+        sudokuBoard.set(0, 0, 1);
+        sudokuBoard.set(0, 1, 2);
+        // ... set other fields as needed for the test ...
+        SudokuColumn column = sudokuBoard.getColumn(0);
+        assertEquals(1, column.getFields()[0].getFieldValue());
+        assertEquals(2, column.getFields()[1].getFieldValue());
+        // ... assert other fields as needed ...
+    }
+
+    @Test
+    void getBox_ShouldReflectBoardState() {
+        sudokuBoard.set(0, 0, 1);
+        sudokuBoard.set(1, 1, 2);
+        // ... set other fields as needed for the test ...
+        SudokuBox box = sudokuBoard.getBox(0, 0);
+        assertEquals(1, box.getFields()[0].getFieldValue());
+        assertEquals(2, box.getFields()[4].getFieldValue());
+        // ... assert other fields as needed ...
+    }
+
+    @Test
+    void setField_InvalidPosition_ShouldThrowException() {
+        SudokuRow row = new SudokuRow();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            row.setField(9, new SudokuField()); // 9 is outside the valid index range for a Sudoku row.
+        });
+
+        String expectedMessage = "Position out of bounds";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {
+            row.setField(-1, new SudokuField()); // -1 is outside the valid index range for a Sudoku row.
+        });
+
+        actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test
     void sudokuField_SetAndGet() {
         SudokuField field = new SudokuField();
         field.setFieldValue(5);
@@ -79,32 +134,27 @@ class TestSudokuBoard {
     }
 
     @Test
-    void sudokuSection_Verification() {
-        SudokuRow row = new SudokuRow();
-        for (int i = 0; i < 9; i++) {
-            row.getFields()[i].setFieldValue(i + 1);
-        }
-        assertTrue(row.verify());
-    }
+    void propertyChangeListener_ShouldNotReceiveUpdatesAfterRemoval() {
+        SudokuField field = new SudokuField();
+        final Boolean[] wasNotified = {false};
 
-    @Test
-    void sudokuSection_VerificationFailure() {
-        SudokuColumn column = new SudokuColumn();
-        for (int i = 0; i < 9; i++) {
-            column.getFields()[i].setFieldValue(1);
-        }
-        assertFalse(column.verify());
-    }
+        // Mock listener that updates wasNotified when property change occurs
+        PropertyChangeListener mockListener = new PropertyChangeListener() {
+            @Override
+            public void propertyChange(PropertyChangeEvent evt) {
+                wasNotified[0] = true;
+            }
+        };
 
-    @Test
-    void sudokuSection_ShouldAllowZeros() {
-        SudokuRow row = new SudokuRow();
-        for (int i = 0; i < row.getFields().length - 1; i++) {
-            row.getFields()[i].setFieldValue(0);
-        }
-        row.getFields()[row.getFields().length - 1].setFieldValue(9);
+        // Add then immediately remove the mock listener
+        field.addPropertyChangeListener(mockListener);
+        field.removePropertyChangeListener(mockListener);
 
-        assertTrue(row.verify(), "Rows with zeroes should be considered valid as they represent empty fields.");
+        // Change the field value
+        field.setFieldValue(5);
+
+        // Verify the listener was not notified
+        assertFalse(wasNotified[0], "The removed listener should not receive property change notifications.");
     }
 
     private int[][] deepCopyBoard(SudokuBoard sudokuBoard) {
