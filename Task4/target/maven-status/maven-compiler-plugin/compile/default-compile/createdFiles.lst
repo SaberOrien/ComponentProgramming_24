@@ -1,8 +1,0 @@
-org\example\SudokuColumn.class
-org\example\SudokuSection.class
-org\example\BacktrackingSudokuSolver.class
-org\example\SudokuBox.class
-org\example\SudokuSolver.class
-org\example\SudokuRow.class
-org\example\SudokuBoard.class
-org\example\SudokuField.class
