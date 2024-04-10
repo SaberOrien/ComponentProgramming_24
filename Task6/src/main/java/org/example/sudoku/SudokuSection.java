@@ -1,13 +1,10 @@
-package org.example;
+package org.example.sudoku;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public abstract class SudokuSection {
     protected ArrayList<SudokuField> fields;
@@ -46,23 +43,38 @@ public abstract class SudokuSection {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object o) {
+        if (o == this) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
+
+        if (!(o instanceof SudokuSection)) {
             return false;
         }
-        SudokuSection that = (SudokuSection) obj;
+        SudokuSection other = (SudokuSection) o;
+
         return new EqualsBuilder()
-                .append(fields, that.fields)
+                .append(fields, other.fields)
                 .isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
+        return new HashCodeBuilder(17, 37)   //must be odd
                 .append(fields)
                 .toHashCode();
     }
 }
+
+
+//@Override
+//public String toString() {
+//    StringBuilder sb = new StringBuilder();
+//    for (int i = 0; i < fields.size(); i++) {
+//        sb.append(fields.get(i).getFieldValue());
+//        if (i < fields.size() - 1) {
+//            sb.append(", ");
+//        }
+//    }
+//    return sb.toString();
+//}

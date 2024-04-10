@@ -1,4 +1,4 @@
-package org.example;
+package org.example.sudoku;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -48,7 +48,7 @@ public class SudokuField {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
+        if (!(obj instanceof SudokuField)) {
             return false;
         }
         SudokuField that = (SudokuField) obj;
@@ -64,3 +64,9 @@ public class SudokuField {
                 .toHashCode();
     }
 }
+
+
+//@Override
+//public String toString() {
+//    return String.valueOf(value);
+//}

@@ -1,4 +1,7 @@
-import org.example.*;
+import org.example.sudoku.BacktrackingSudokuSolver;
+import org.example.sudoku.SudokuBoard;
+import org.example.sudoku.SudokuColumn;
+import org.example.sudoku.SudokuSolver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +29,7 @@ public class TestSudokuColumn {
         assertEquals(2, column.getFields().get(1).getFieldValue());
     }
 
+    //NEW TESTS
     @Test
     void toString_ShouldContainCorrectInformation() {
         SudokuColumn column = sudokuBoard.getColumn(0);
@@ -33,21 +37,20 @@ public class TestSudokuColumn {
     }
 
     @Test
-    void equals_Reflexivity() {
+    void equals_WithSelf() {
         SudokuColumn column = sudokuBoard.getColumn(0);
-        assertEquals(column, column, "A column should be equal to itself.");
+        assertTrue(column.equals(column), "A column should be equal to itself.");
     }
 
     @Test
-    void equals_Symmetry() {
+    void equals_SameColumn() {
         sudokuBoard.set(0, 0, 1);
         sudokuBoard.set(0, 1, 2);
 
         SudokuColumn column1 = sudokuBoard.getColumn(0);
         SudokuColumn column2 = sudokuBoard.getColumn(0);
 
-        assertEquals(column1, column2, "Two columns with the same values should be equal.");
-        assertEquals(column2, column1, "Two columns with the same values should be equal (symmetry).");
+        assertTrue(column1.equals(column2), "Two columns with the same values should be equal.");
     }
 
     @Test
@@ -56,16 +59,17 @@ public class TestSudokuColumn {
         sudokuBoard.set(0, 1, 2);
 
         SudokuColumn column1 = sudokuBoard.getColumn(0);
-        SudokuColumn column2 = sudokuBoard.getColumn(1); // Assuming column1 and column2 have different values
+        SudokuColumn column2 = sudokuBoard.getColumn(1);
 
-        assertNotEquals(column1, column2, "Two different columns should not be equal.");
+        assertFalse(column1.equals(column2), "Two different columns should not be equal.");
     }
 
     @Test
     void equals_NullAndOtherClass() {
         SudokuColumn column = sudokuBoard.getColumn(0);
-        assertNotEquals(column, null, "A column should not be equal to null.");
-        assertNotEquals(column, new Object(), "A column should not be equal to an object of a different class.");
+        assertFalse(column.equals(null), "A column should not be equal to null.");
+        String differentClass = new String("Not a column");
+        assertFalse(column.equals(differentClass), "A column should not be equal to an object of a different class.");
     }
 
     @Test

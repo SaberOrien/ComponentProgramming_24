@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.SudokuGuiController">
+    <GridPane fx:id="sudokuGrid" hgap="10" vgap="10">
+        <Label text="Sudoku Game Starts Here!" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="9"/>
+        <!-- Nested loops in the controller will populate these TextFields -->
+    </GridPane>
+</StackPane>

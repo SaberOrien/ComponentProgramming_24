@@ -47,6 +47,17 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.14.0</version>
         </dependency>
+        <!--JavaFX-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>22</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -165,6 +176,14 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>SudokuGui</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -208,7 +227,6 @@
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>3.3.0</version>
             </plugin>
-            <!--REPLACE ME WITH THE WIKAMP THING - FOR SOME REASON THAT ONE DOESN'T WORK, AND WIKAMP GENERATES EVEN MORE ERRORS. HOW COOL IS THAT =)-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>

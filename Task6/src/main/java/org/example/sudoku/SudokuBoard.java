@@ -1,8 +1,7 @@
-package org.example;
+package org.example.sudoku;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -84,25 +83,27 @@ public class SudokuBoard implements PropertyChangeListener {
         return sudokuSolver.solve(this);
     }
 
-    public void copyFrom(SudokuBoard other) {
-        for (int i = 0; i < board.size(); i++) {
-            this.board.get(i).setFieldValue(other.board.get(i).getFieldValue());
-        }
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("board", board)
-                .toString();
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < board.size(); i++) {
+            builder.append(board.get(i).getFieldValue());
+            if ((i + 1) % 9 == 0) {
+                builder.append("\n");
+            } else {
+                builder.append(", ");
+            }
+        }
+        return builder.toString().trim();
     }
+
 
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
+        if (!(obj instanceof SudokuBoard)) {
             return false;
         }
         SudokuBoard that = (SudokuBoard) obj;
@@ -117,5 +118,4 @@ public class SudokuBoard implements PropertyChangeListener {
                 .append(board)
                 .toHashCode();
     }
-
 }
