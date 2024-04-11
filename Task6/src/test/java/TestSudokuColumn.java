@@ -31,12 +31,6 @@ public class TestSudokuColumn {
 
     //NEW TESTS
     @Test
-    void toString_ShouldContainCorrectInformation() {
-        SudokuColumn column = sudokuBoard.getColumn(0);
-        assertTrue(column.toString().contains("fields"), "toString should contain 'fields' information.");
-    }
-
-    @Test
     void equals_WithSelf() {
         SudokuColumn column = sudokuBoard.getColumn(0);
         assertTrue(column.equals(column), "A column should be equal to itself.");
@@ -81,5 +75,15 @@ public class TestSudokuColumn {
         SudokuColumn column2 = sudokuBoard.getColumn(0);
 
         assertEquals(column1.hashCode(), column2.hashCode(), "Two equal columns should have the same hash code.");
+    }
+
+    @Test
+    void toString_CorrectlyDisplaysColumn() {
+        sudokuBoard.set(0, 0, 1);
+        sudokuBoard.set(0, 1, 2);
+
+        SudokuColumn column = sudokuBoard.getColumn(0);
+
+        assertEquals(column.toString(), "1, 2, 0, 0, 0, 0, 0, 0, 0", "The column should match");
     }
 }

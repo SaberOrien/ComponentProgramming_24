@@ -37,9 +37,14 @@ public abstract class SudokuSection {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("fields", fields)
-                .toString();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < fields.size(); i++) {
+            sb.append(fields.get(i).getFieldValue());
+            if (i < fields.size() - 1) {
+                sb.append(", ");
+            }
+        }
+        return sb.toString();
     }
 
     @Override
@@ -66,15 +71,9 @@ public abstract class SudokuSection {
     }
 }
 
-
 //@Override
 //public String toString() {
-//    StringBuilder sb = new StringBuilder();
-//    for (int i = 0; i < fields.size(); i++) {
-//        sb.append(fields.get(i).getFieldValue());
-//        if (i < fields.size() - 1) {
-//            sb.append(", ");
-//        }
-//    }
-//    return sb.toString();
+//    return new ToStringBuilder(this)
+//            .append("fields", fields)
+//            .toString();
 //}

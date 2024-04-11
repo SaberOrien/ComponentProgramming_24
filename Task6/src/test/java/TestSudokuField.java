@@ -88,4 +88,12 @@ public class TestSudokuField {
 
         assertFalse(field1.equals(notASudokuField), "A SudokuField should not be equal to an object of a different class.");
     }
+
+    @Test
+    void toString_returnsCorrectValue() {
+        SudokuField field = new SudokuField();
+        field.setFieldValue(9);
+
+        assertEquals(field.toString(), "9", "They should be equal");
+    }
 }

@@ -2,7 +2,6 @@ package org.example.sudoku;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -38,9 +37,7 @@ public class SudokuField {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("value", value)
-                .toString();
+        return String.valueOf(value);
     }
 
     @Override
@@ -65,8 +62,9 @@ public class SudokuField {
     }
 }
 
-
-//@Override
-//public String toString() {
-//    return String.valueOf(value);
-//}
+//    @Override
+//    public String toString() {
+//        return new ToStringBuilder(this)
+//                .append("value", value)
+//                .toString();
+//    }
